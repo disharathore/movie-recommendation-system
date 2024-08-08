@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+
+# Distribution
+ratings['rating'].hist()
+plt.title('Distribution of Ratings')
+plt.xlabel('Rating')
+plt.ylabel('Frequency')
+plt.show()
+
+# ratings
+ratings_per_movie = ratings.groupby('movieId')['rating'].count()
+ratings_per_movie.hist()
+plt.title('Number of Ratings per Movie')
+plt.xlabel('Number of Ratings')
+plt.ylabel('Frequency')
+plt.show()
