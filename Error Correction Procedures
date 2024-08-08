@@ -1,0 +1,9 @@
+from sklearn.model_selection import KFold
+
+# K-fold cross-validation
+kf = KFold(n_splits=5)
+for train_index, test_index in kf.split(ratings):
+    train_data, test_data = ratings.iloc[train_index], ratings.iloc[test_index]
+    predictions = user_based_collaborative_filtering(train_data, user_id=1)
+    rmse = evaluate_model(test_data, predictions)
+    print(f'Fold RMSE: {rmse}')
