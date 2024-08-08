@@ -1,0 +1,5 @@
+# Handle missing values
+ratings.fillna(0, inplace=True)
+
+# Normalize ratings
+ratings['rating'] = (ratings['rating'] - ratings['rating'].min()) / (ratings['rating'].max() - ratings['rating'].min())
